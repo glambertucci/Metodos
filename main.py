@@ -1,4 +1,4 @@
 import metodos as Mt
 
-fierens = Mt.Metodos(0.1)
-fierens.show_graph()
+yuyin = Mt.Metodos(0.1)
+yuyin.show_graph()
