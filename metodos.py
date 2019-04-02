@@ -28,9 +28,9 @@ class Metodos:
 
         plt.figure(1)
         plt.subplot(1,2,1)#loads the plots
-        plt.imshow(self.a)
+        plt.imshow(self.a,cmap='gray',vmin=1,vmax=255)
         plt.subplot(1,2,2)
-        plt.imshow(self.b)
+        plt.imshow(self.b,cmap='gray',vmin=1,vmax=255)
 
     def show_graph(self):
         plt.show()
