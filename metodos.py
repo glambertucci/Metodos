@@ -40,6 +40,26 @@ class Metodos:
         plt.imshow(self.b, cmap='gray', vmin=0, vmax=255)
         plt.show()
 
-    def singular_values(self, ent):
-#       ent Training 2define
-        pass
+    def singular_values(self, A):
+        B = (np.transpose(A)).dot(A)
+        avas, aves = np.linalg.eig(B)
+
+        dictionary = {}
+        for i in range(len(avas)):
+            dictionary.setdefault(avas[i], aves[:, i])
+
+        avas.sort()
+        avas = np.flip(avas)
+        aves_sorted = []
+
+        for i in range(len(avas)):
+            aves_sorted.append(dictionary.setdefault(avas[i]))
+
+        singular = np.sqrt(avas)
+        sigma = np.diag(singular)
+
+        descartes, U = np.linalg.eig(np.asarray(A).dot(np.transpose(A)))
+
+        Vt = np.transpose(aves)
+
+        return [U, sigma, Vt]
