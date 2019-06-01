@@ -77,3 +77,4 @@ class Metodos:
         plt.imshow(self.b)
         plt.subplot(1, 3, 3)
         plt.imshow(self.d)
+
