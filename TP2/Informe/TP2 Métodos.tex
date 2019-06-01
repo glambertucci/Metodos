@@ -59,7 +59,7 @@ donde ${D}_{A}$, ${D}_{B}$, ${D}_{C}$ y ${D}_{R}$ son constantes, $R$, $B$ y $C$
 
 \section{Código empleado}
 El código elaborado para este trabajo fue hecho en \textbf{Matlab}.
-Cabe destacar que se probó previamente el algoritmo aproximando laa ecuación diferencial
+Cabe destacar que se probó previamente el algoritmo aproximando la ecuación diferencial
 
 \[\left\{
   \begin{array}{lr}
@@ -70,10 +70,21 @@ Cabe destacar que se probó previamente el algoritmo aproximando laa ecuación d
 \]
 
 sabiendo que el resultado de esta es
-
 \[ x(t) \ = \ e^t \]
 
 determinando así su adecuado funcionamiento.
+
+\begin{itemize}
+	\item Benchmark
+	\
+\end{itemize}
+	\begin{tabbing}
+	 f=@(t,x,par)[x];\\
+	 par =@(t) t>0; \\
+	$[t,x]$ = miode(f,1,0,1,0.5,0.0001,par);\\
+	\end{tabbing}
+	
+	El x final obtenido, correspondiente a la aproximación de e$^1$, fue 2.718281 que tiene un error absoluto con respecto al valor real menor al establecido como máximo.
 	
 \begin{itemize}
 	\item \textbf{Heun:}
@@ -216,7 +227,7 @@ end
 \end{itemize}
 	
 \section{Resultados obtenidos}
-A continuación, se presentan los resultados obtenidos de las funciones estimadas. En estas se observa la concentración de células (en picomoles) en función del tiempo (en días). 
+A continuación, se presentan los resultados obtenidos de las funciones estimadas. En estas se observa la concentración de células (en picomolar) en función del tiempo (en días). 
 
 \begin{figure}[H]
 	\centering
@@ -226,6 +237,6 @@ A continuación, se presentan los resultados obtenidos de las funciones estimada
 
 
 \section{Conclusión}
-Comparando los gráficos obtenidos con los presentados en el artículo, se puede observar que las aproximaciones, realizadas con una tolerancia de $10^{-6}$, son buenas, es decir, próximas a las empleadas en el artículo. 	
+Comparando los gráficos obtenidos con los presentados en el artículo, se puede verificar en primer lugar que el algoritmo realizado para resolver ecuaciones diferenciales ordinarias funciona correctamente. Por otro lado, se puede observar que las aproximaciones, realizadas con una tolerancia de $10^{-6}$, son buenas, es decir, próximas a las empleadas en el artículo. 	
  
 \end{document}
