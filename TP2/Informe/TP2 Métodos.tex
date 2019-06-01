@@ -37,14 +37,57 @@
 
 \section{Introducción}
 
+El trabajo presentado consiste en aproximar funciones dadas en ecuaciones diferenciales, mediante el uso del método de Heun o tambien conocido como Runge-Kutta de segundo orden. Estas ecuaciones representan un modelo de crecimiento óseo basado en un balance entre osteoblastos y osteoclastos, obtenidas delel artículo de \textit{Lemaire et al}\footnote{Vincent Lemaire, Frank L. Tobin, Larry D. Greller, Carolyn R. Cho, and
+Larry J. Suva. Modeling the interactions between osteoblast and osteoclast
+activities in bone remodeling. 229:293–309, 2004.}.
+
+El sistema a aproximar es el siguiente:
+
+\begin{equation}
+\frac{dR}{dt} \ = \ D_R \cdot {\pi}_{C} \ - \ \frac{D_B}{{\pi}_{C}} \ \ {I}_{R},
+\end{equation}
+
+\begin{equation}
+\frac{dB}{dt} \ = \ \frac{D_B}{{\pi}_{C}} \cdot R \ - \ k_B \cdot B \ \ + {I}_{B},
+\end{equation}
+
+\begin{equation}
+\frac{dC}{dt} \ = \ D_C \cdot {\pi}_{L} \ - \ D_A \cdot	{\pi}_{C} \cdot C \ \ + \ \ {I}_{C}.
+\end{equation}
+
+donde ${D}_{A}$, ${D}_{B}$, ${D}_{C}$ y ${D}_{R}$ son constantes, $R$, $B$ y $C$ las incógnitas ${\pi}_{C}$ y ${\pi}_{L}$ son funciones de las incógnitas (${\pi}_{C} $ función de $ C $ y $ {\pi}_{L} $ función de $B$ y $R$). A su vez, estas ultimas dependen de otras funciones, las cuales son dato y varían dependiendo la situación analizada. Todos los valores, tanto de las constantes como de las funciones anteriormente mencionadas, son obtenidas del artículo.
 
 \section{Código empleado}
+El código elaborado para este trabajo fue hecho en \textbf{Matlab}.
+Cabe destacar que se probó previamente el algoritmo aproximando laa ecuación diferencial
+
+\[\left\{
+  \begin{array}{lr}
+    \frac{dx}{dt} \ = \ x, \ \ \ \ \ \ \ con \ t \in [0;1]\\
+    x(0) = 1
+  \end{array}
+\right.
+\]
+
+sabiendo que el resultado de esta es
+
+\[ x(t) \ = \ e^t \]
+
+determinando así su adecuado funcionamiento.
 	
 	
-\section{Resultados obtenidos} 
 	
+\section{Resultados obtenidos}
+A continuación, se presentan los resultados obtenidos de las funciones estimadas. En estas se observa la concentración de células (en picomoles) en función del tiempo (en días). 
+
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=0.9\textwidth]{.png}
+%	\caption{.}
+%\end{figure}	
+
 
 \section{Conclusión}
-	
+Comparando los gráficos obtenidos con los presentados en el artículo, se puede observar que las aproximaciones, realizadas con una tolerancia de $10^{-6}$, son buenas, es decir, próximas a las empleadas en el artículo. 	
  
 \end{document}
