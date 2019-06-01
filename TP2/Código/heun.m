@@ -1,4 +1,4 @@
-function [t y]=heun(f,x0,t0,tf,n,par)
+function [t x]=heun(f,x0,t0,tf,n,par)
 	h=(tf-t0)/n;
 	t=linspace(t0,tf,n+1);
 	x(1,:)=x0;
