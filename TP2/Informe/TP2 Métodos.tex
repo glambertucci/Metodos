@@ -55,14 +55,19 @@ El sistema a aproximar es el siguiente:
 \frac{dC}{dt} \ = \ D_C \cdot {\pi}_{L} \ - \ D_A \cdot	{\pi}_{C} \cdot C \ \ + \ \ {I}_{C}.
 \end{equation}
 
-donde ${D}_{A}$, ${D}_{B}$, ${D}_{C}$ y ${D}_{R}$ son constantes, $R$, $B$ y $C$ las incógnitas ${\pi}_{C}$ y ${\pi}_{L}$ son funciones de las incógnitas ( ${\pi}_{C} $ función de $ C $ y $ {\pi}_{L} $ función de $B$ y $R$). A su vez, estas ultimas dependen de otras funciones, las cuales son dato y varían dependiendo la situación analizada. Todos los valores, tanto de las constantes como de las funciones anteriormente mencionadas, son obtenidas del artículo.
+donde ${D}_{A}$, ${D}_{B}$, ${D}_{C}$ y ${D}_{R}$ son constantes, $R$, $B$ y $C$ las incógnitas ${\pi}_{C}$ y ${\pi}_{L}$ son funciones de las incógnitas (${\pi}_{C} $ función de $ C $ y $ {\pi}_{L} $ función de $B$ y $R$). A su vez, estas ultimas dependen de otras funciones, las cuales son dato y varían dependiendo la situación analizada. Todos los valores, tanto de las constantes como de las funciones anteriormente mencionadas, son obtenidas del artículo.
 
 \section{Código empleado}
 El código elaborado para este trabajo fue hecho en \textbf{Matlab}.
-Cabe destacar que se probó previamente el algoritmo aproximando una ecuación diferencial
+Cabe destacar que se probó previamente el algoritmo aproximando laa ecuación diferencial
 
-\[ \frac{{d}^{2}x}{{dt}^{2}} \ = \ x \ \ \ \ con \ \ t \in [0;1]\]
-\[ x(0) = 1 \]
+\[\left\{
+  \begin{array}{lr}
+    \frac{dx}{dt} \ = \ x, \ \ \ \ \ \ \ con \ t \in [0;1]\\
+    x(0) = 1
+  \end{array}
+\right.
+\]
 
 sabiendo que el resultado de esta es
 
